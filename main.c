@@ -2,17 +2,22 @@
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
+void sub(void);
 
 int main(void)
 {
-	int i=10;
-	printf("함수 호출 전 i=%d\n", i);
-	inc(i);
-	printf("함수 호출 후 i=%d\n", i);
+	int i;
+	for(i=0; i<3; i++)
+	sub();
 	return 0;
 }
-int inc(int counter)
+
+void sub(void)
 {
-	counter++;
-	return counter;
+	int auto_count = 0;
+	static int static_count = 0;
+	auto_count++;
+	static_count++;
+	printf("auto_count=%d\n", auto_count);
+	printf("static_count=%d\n", static_count);
 }
